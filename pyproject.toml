@@ -1,0 +1,22 @@
+[project]
+name = "gestao_escolar_modelagem"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "matheusmichalski", email = "matheus.michalskifc@gmail.com"},
+]
+dependencies = ["django>=5.2.3", "django-localflavor>=5.0", "django-sequences>=3.0"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver"
+makemigrations = "python manage.py makemigrations" 
+migrate = "python manage.py migrate" 
+createsuperuser = "python manage.py createsuperuser"
