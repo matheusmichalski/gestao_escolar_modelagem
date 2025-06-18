@@ -1,10 +1,9 @@
 from django.db import models
-from .matricula import Matricula
 from localflavor.br.models import BRCPFField
 import uuid
 
 
-class Aluno(models.Model):
+class Professor(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False, unique=True
     )
@@ -21,3 +20,4 @@ class Aluno(models.Model):
     data_nascimento = models.DateField(auto_now=False, blank=False, null=False)
     email = models.CharField(max_length=100, blank=False, null=False)
     telefone = models.CharField(max_length=20, blank=False, null=False)
+    formacao = models.CharField(max_length=255)
