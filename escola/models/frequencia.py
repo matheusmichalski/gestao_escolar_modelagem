@@ -14,7 +14,7 @@ class Frequencia(models.Model):
     )
     data_aula = models.DateField(auto_now=True, blank=False, null=False)
     turma = models.ForeignKey(
-        "escola.Matricula", on_delete=models.CASCADE, related_name="turma"
+        "escola.Matricula", on_delete=models.CASCADE, related_name="frequencias"
     )
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="A")
     obvervacoes = models.CharField(max_length=255)
