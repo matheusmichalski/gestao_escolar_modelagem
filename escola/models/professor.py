@@ -21,3 +21,9 @@ class Professor(models.Model):
     email = models.CharField(max_length=100, blank=False, null=False)
     telefone = models.CharField(max_length=20, blank=False, null=False)
     formacao = models.CharField(max_length=255)
+
+    class Meta:
+        verbose_name_plural = "Professores"
+
+    def __str__(self):
+        return self.nome

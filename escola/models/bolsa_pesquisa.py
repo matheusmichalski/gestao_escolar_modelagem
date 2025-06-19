@@ -13,3 +13,6 @@ class Bolsa_Pesquisa(models.Model):
         on_delete=models.PROTECT,
         related_name="bolsa_pesquisa",
     )
+
+    def __str__(self):
+        return self.projeto_extracurricular

@@ -20,4 +20,6 @@ class Aluno(models.Model):
     data_nascimento = models.DateField(auto_now=False, blank=False, null=False)
     email = models.CharField(max_length=100, blank=False, null=False)
     telefone = models.CharField(max_length=20, blank=False, null=False)
-    matricula = models.OneToOneField("escola.Matricula", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome
