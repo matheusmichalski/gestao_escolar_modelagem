@@ -4,3 +4,6 @@ from .turma import Turma
 from .curso import Curso
 from .disciplina import Disciplina
 from .avaliacao import Avaliacao
+from .professor import Professor
+from .projeto_extracurricular import Projeto_Extracurricular
+from .bolsa_pesquisa import Bolsa_Pesquisa
