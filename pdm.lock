@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:9f9336c093feb2ef09f47b82eeeeb8a185e2c50f90c08fbf12c4773d193849e5"
+content_hash = "sha256:e9588df7cbd1d1a8f88d706b5b661e7be3c541e4876f869b0bbff9aa39170664"
 
 [[metadata.targets]]
 requires_python = "==3.13.*"
@@ -67,6 +67,21 @@ dependencies = [
 files = [
     {file = "django_sequences-3.0-py3-none-any.whl", hash = "sha256:e2dc2c3615f01e15d51c155ad38df8f56cbe61ec20b82f250b4ea35a277af614"},
     {file = "django_sequences-3.0.tar.gz", hash = "sha256:e82bfee28d9eaee5b7d3be618eed989c7c5a117601b56142ee2435edb5a45456"},
+]
+
+[[package]]
+name = "djangorestframework"
+version = "3.16.0"
+requires_python = ">=3.9"
+summary = "Web APIs for Django, made easy."
+groups = ["default"]
+dependencies = [
+    "backports-zoneinfo; python_version < \"3.9\"",
+    "django>=4.2",
+]
+files = [
+    {file = "djangorestframework-3.16.0-py3-none-any.whl", hash = "sha256:bea7e9f6b96a8584c5224bfb2e4348dfb3f8b5e34edbecb98da258e892089361"},
+    {file = "djangorestframework-3.16.0.tar.gz", hash = "sha256:f022ff46613584de994c0c6a4aebbace5fd700555fbe9d33b865ebf173eba6c9"},
 ]
 
 [[package]]
