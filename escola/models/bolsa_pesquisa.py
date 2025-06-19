@@ -8,3 +8,8 @@ class Bolsa_Pesquisa(models.Model):
     )
     data_inicio = models.DateField(auto_now=False, blank=False, null=False)
     data_termino = models.DateField(auto_now=False, blank=True, null=True)
+    projeto_extracurricular = models.ForeignKey(
+        "escola.Projeto_Extracurricular",
+        on_delete=models.PROTECT,
+        related_name="bolsa_pesquisa",
+    )
