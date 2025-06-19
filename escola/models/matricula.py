@@ -27,7 +27,6 @@ class Matricula(models.Model):
     curso = models.ForeignKey(
         "escola.Curso", on_delete=models.PROTECT, related_name="matriculas"
     )
-
     def save(self, *args, **kwargs):
         if not self.registration_code:
             year = datetime.now().year
