@@ -14,3 +14,6 @@ class Avaliacao(models.Model):
         decimal_places=2,
         validators=[MinValueValidator(0.00), MaxValueValidator(10.00)],
     )
+
+    def __str__(self):
+        return self.data

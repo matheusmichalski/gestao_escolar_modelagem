@@ -18,3 +18,6 @@ class Frequencia(models.Model):
     )
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="A")
     obvervacoes = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.turma

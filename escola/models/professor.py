@@ -24,3 +24,6 @@ class Professor(models.Model):
 
     class Meta:
         verbose_name_plural = "Professores"
+
+    def __str__(self):
+        return self.nome

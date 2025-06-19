@@ -20,8 +20,12 @@ class Matricula(models.Model):
     status = models.CharField(
         choices=STATUS_MATRICULA, max_length=1, blank=False, null=False, default="P"
     )
+    aluno = models.OneToOneField(
+        "escola.aluno", on_delete=models.PROTECT, related_name="aluno"
+    )
+
     curso = models.ForeignKey(
-        "escola.Curso", on_delete=models.PROTECT, related_name="curso"
+        "escola.Curso", on_delete=models.PROTECT, related_name="matriculas"
     )
 
     def save(self, *args, **kwargs):
