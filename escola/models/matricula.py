@@ -20,7 +20,9 @@ class Matricula(models.Model):
     status = models.CharField(
         choices=STATUS_MATRICULA, max_length=1, blank=False, null=False, default="P"
     )
-
+    curso = models.ForeignKey(
+        "escola.Curso", on_delete=models.PROTECT, related_name="curso"
+    )
     def save(self, *args, **kwargs):
         if not self.registration_code:
             year = datetime.now().year
