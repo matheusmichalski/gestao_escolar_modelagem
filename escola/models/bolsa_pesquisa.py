@@ -15,4 +15,4 @@ class Bolsa_Pesquisa(models.Model):
     )
 
     def __str__(self):
-        return self.projeto_extracurricular
+        return str(self.projeto_extracurricular)
