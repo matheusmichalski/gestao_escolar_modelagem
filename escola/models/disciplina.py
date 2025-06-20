@@ -10,9 +10,6 @@ class Disciplina(models.Model):
     carga_horaria = models.IntegerField(null=False)
     ementa = models.CharField(max_length=500)
     professores = models.ManyToManyField("escola.Professor", related_name="professores")
-    avaliacoes = models.ManyToManyField(
-        "escola.Avaliacao", blank=True, related_name="avaliacoes"
-    )
 
     def __str__(self):
         return self.nome

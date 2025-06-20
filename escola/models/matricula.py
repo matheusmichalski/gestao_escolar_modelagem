@@ -27,6 +27,9 @@ class Matricula(models.Model):
     curso = models.ForeignKey(
         "escola.Curso", on_delete=models.PROTECT, related_name="matriculas"
     )
+    turma = models.ForeignKey(
+        "escola.Turma", on_delete=models.CASCADE, related_name="matriculas", null=True
+    )
 
     def save(self, *args, **kwargs):
         if not self.num_matricula:
