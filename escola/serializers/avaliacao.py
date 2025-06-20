@@ -1,9 +1,10 @@
-from escola.models import Avaliacao
+from rest_framework import serializers
+from escola.models import Avaliacao, Disciplina
 
-from rest_framework.serializers import ModelSerializer
 
+class AvaliacaoSerializer(serializers.ModelSerializer):
+    disciplina = serializers.PrimaryKeyRelatedField(queryset=Disciplina.objects.all())
 
-class AvaliacaoSerializer(ModelSerializer):
     class Meta:
         model = Avaliacao
         fields = "__all__"

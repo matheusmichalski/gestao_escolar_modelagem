@@ -16,5 +16,8 @@ class Projeto_Extracurricular(models.Model):
         related_name="projeto_extracurricular",
     )
 
+    class Meta:
+        verbose_name_plural = "Projetos_Extracurriculares"
+
     def __str__(self):
         return f"{self.titulo}, {self.professor_orientador}"
