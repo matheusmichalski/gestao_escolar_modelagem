@@ -1,5 +1,5 @@
 from django.db import models
-import datetime
+from django.utils import timezone
 from sequences import get_next_value
 
 
@@ -27,14 +27,15 @@ class Matricula(models.Model):
     curso = models.ForeignKey(
         "escola.Curso", on_delete=models.PROTECT, related_name="matriculas"
     )
+
     def save(self, *args, **kwargs):
-        if not self.registration_code:
-            year = datetime.now().year
+        if not self.num_matricula:
+            year = timezone.now().year
             sequence_name = f"registration_{year}"
             sequence_number = get_next_value(sequence_name)
             formated_number = str(sequence_number).zfill(6)
-            self.registration_code = f"{year}{formated_number}"
+            self.num_matricula = f"{year}{formated_number}"
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.registration_code
+        return self.num_matricula

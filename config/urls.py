@@ -14,18 +14,18 @@ from escola.views.projeto_extracurricular import Projeto_ExtracurricularViewSet
 from escola.views.turma import TurmaViewSet
 
 router = DefaultRouter()
-router.register(r'alunos', AlunoViewSet)
-router.register(r'', AvaliacaoViewSet)
-router.register(r'bolsas-pesquisa', Bolsa_PesquisaViewSet)
-router.register(r'cursos', CursoViewSet)
-router.register(r'disciplinas', DisciplinaViewSet)
-router.register(r'frequencias', FrequenciaViewSet)
-router.register(r'matriculas', MatriculaViewSet)
-router.register(r'professores', ProfessorViewSet)
-router.register(r'projetos-extracurriculares', Projeto_ExtracurricularViewSet)
-router.register(r'turmas', TurmaViewSet)
+router.register(r"alunos", AlunoViewSet)
+router.register(r"avaliacoes", AvaliacaoViewSet)
+router.register(r"bolsas-pesquisa", Bolsa_PesquisaViewSet)
+router.register(r"cursos", CursoViewSet)
+router.register(r"disciplinas", DisciplinaViewSet)
+router.register(r"frequencias", FrequenciaViewSet)
+router.register(r"matriculas", MatriculaViewSet)
+router.register(r"professores", ProfessorViewSet)
+router.register(r"projetos-extracurriculares", Projeto_ExtracurricularViewSet)
+router.register(r"turmas", TurmaViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path("admin/", admin.site.urls),
+    path("", include(router.urls)),
 ]
