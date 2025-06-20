@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from sequences import get_next_value
 
+from escola.models.aluno import Aluno
+
 
 class Matricula(models.Model):
     STATUS_MATRICULA = (
@@ -20,8 +22,8 @@ class Matricula(models.Model):
     status = models.CharField(
         choices=STATUS_MATRICULA, max_length=1, blank=False, null=False, default="P"
     )
-    aluno = models.OneToOneField(
-        "escola.aluno", on_delete=models.PROTECT, related_name="aluno"
+    aluno = models.ForeignKey(
+        Aluno, on_delete=models.CASCADE, related_name="matriculas"
     )
 
     curso = models.ForeignKey(
