@@ -16,4 +16,4 @@ class Avaliacao(models.Model):
     )
 
     def __str__(self):
-        return self.data
+        return self.data.strftime('%d/%m/%Y')
