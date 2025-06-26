@@ -17,6 +17,17 @@ class Turma(models.Model):
     )
 
     def save(self, *args, **kwargs):
+        if self.data_termino <= self.data_inicio:
+            raise ValueError("A data de término deve ser depois da data de início.")
+
+        dias = (self.data_termino - self.data_inicio).days + 1
+        horas_disponiveis = dias * 24
+
+        if horas_disponiveis < self.curso.carga_horaria:
+            raise ValueError(
+                f"A duração da turma ({horas_disponiveis} horas) é menor que a carga horária do curso ({self.curso.carga_horaria} horas)."
+            )
+
         if not self.num_turma:
             maior_turma = (
                 Turma.objects.filter(curso=self.curso)
@@ -25,6 +36,7 @@ class Turma(models.Model):
                 or 0
             )
             self.num_turma = maior_turma + 1
+
         super().save(*args, **kwargs)
 
     def __str__(self):

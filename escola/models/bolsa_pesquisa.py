@@ -14,5 +14,10 @@ class Bolsa_Pesquisa(models.Model):
         related_name="bolsa_pesquisa",
     )
 
+    def save(self, *args, **kwargs):
+        if self.data_termino and self.data_termino <= self.data_inicio:
+            raise ValueError("A data de término deve ser depois da data de início.")
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return str(self.projeto_extracurricular)
