@@ -5,7 +5,6 @@ from rest_framework.serializers import ModelSerializer
 
 
 class TurmaSerializer(serializers.ModelSerializer):
-    curso = serializers.SerializerMethodField()
 
     class Meta:
         model = Turma
