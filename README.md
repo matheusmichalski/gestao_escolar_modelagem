@@ -86,16 +86,4 @@ pytest
 - Vale a pena revisar os serializers e views antes de expor APIs em produção.
 - Para produção, substitua `db.sqlite3` por um banco mais robusto (Postgres) e ajuste `config/settings.py` (DEBUG, ALLOWED_HOSTS, SECRET_KEY e outras configurações de segurança).
 
-## Contribuindo
 
-1. Fork e branch feature: crie branches pequenos e atômicos.
-2. Escreva testes para novas funcionalidades.
-3. Abra pull requests com descrição clara do objetivo.
-
-## Contato
-
-Se precisar de ajuda com o repositório, abra uma issue descrevendo o que você quer fazer ou os problemas encontrados.
-
----
-
-Este README foi gerado automaticamente para servir como resumo inicial; personalize-o com detalhes do seu domínio, scripts de execução específicos e instruções de deploy quando desejar.
